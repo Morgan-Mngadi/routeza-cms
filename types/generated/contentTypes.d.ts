@@ -467,6 +467,196 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBlogPostBlogPost extends Struct.CollectionTypeSchema {
+  collectionName: 'blog_posts';
+  info: {
+    displayName: 'blog-posts';
+    pluralName: 'blog-posts';
+    singularName: 'blog-post';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.RichText;
+    coverImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    excerpt: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::blog-post.blog-post'
+    > &
+      Schema.Attribute.Private;
+    publishDate: Schema.Attribute.Date;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', true> &
+      Schema.Attribute.Required;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNewsArticleNewsArticle extends Struct.CollectionTypeSchema {
+  collectionName: 'news_articles';
+  info: {
+    displayName: 'news-articles';
+    pluralName: 'news-articles';
+    singularName: 'news-article';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.RichText;
+    coverImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::news-article.news-article'
+    > &
+      Schema.Attribute.Private;
+    publishDate: Schema.Attribute.Date & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    pullQuote: Schema.Attribute.Component<'shared.pull-quote', false>;
+    seo: Schema.Attribute.Component<'seo.seo', true>;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    summary: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiRedirectRedirect extends Struct.CollectionTypeSchema {
+  collectionName: 'redirects';
+  info: {
+    displayName: 'redirects';
+    pluralName: 'redirects';
+    singularName: 'redirect';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    fromPath: Schema.Attribute.String & Schema.Attribute.Required;
+    isActive: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::redirect.redirect'
+    > &
+      Schema.Attribute.Private;
+    notes: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    statusCode: Schema.Attribute.Enumeration<
+      ['Redirect-301', 'Redirecct-302']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Redirect-301'>;
+    toUrl: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSeoPageSeoPage extends Struct.CollectionTypeSchema {
+  collectionName: 'seo_pages';
+  info: {
+    displayName: 'seo-pages';
+    pluralName: 'seo-pages';
+    singularName: 'seo-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    isActive: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::seo-page.seo-page'
+    > &
+      Schema.Attribute.Private;
+    pageName: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    routePath: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    seo: Schema.Attribute.Component<'seo.seo', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSiteSettingSiteSetting extends Struct.SingleTypeSchema {
+  collectionName: 'site_settings';
+  info: {
+    displayName: 'site-settings';
+    pluralName: 'site-settings';
+    singularName: 'site-setting';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    defaultMetaDescription: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 155;
+        minLength: 120;
+      }>;
+    defaultMetaTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+        minLength: 20;
+      }>;
+    defaultOgImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::site-setting.site-setting'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    siteUrl: Schema.Attribute.UID<'defaultMetaTitle'> &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -979,6 +1169,11 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::blog-post.blog-post': ApiBlogPostBlogPost;
+      'api::news-article.news-article': ApiNewsArticleNewsArticle;
+      'api::redirect.redirect': ApiRedirectRedirect;
+      'api::seo-page.seo-page': ApiSeoPageSeoPage;
+      'api::site-setting.site-setting': ApiSiteSettingSiteSetting;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

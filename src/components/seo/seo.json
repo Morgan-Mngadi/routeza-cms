@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_seo_seos",
+  "info": {
+    "displayName": "SEO",
+    "icon": "search"
+  },
+  "options": {},
+  "attributes": {
+    "noindex": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "metaTitle": {
+      "type": "string",
+      "minLength": 20,
+      "maxLength": 60,
+      "required": true
+    },
+    "metaDescription": {
+      "type": "string",
+      "minLength": 120,
+      "maxLength": 155,
+      "required": true
+    },
+    "canonicalUrl": {
+      "type": "string",
+      "required": true
+    },
+    "schemaJson": {
+      "type": "json",
+      "required": false
+    }
+  },
+  "config": {}
+}

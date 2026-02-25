@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_settings",
+  "info": {
+    "singularName": "site-setting",
+    "pluralName": "site-settings",
+    "displayName": "site-settings"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "defaultMetaTitle": {
+      "type": "string",
+      "minLength": 20,
+      "maxLength": 60,
+      "required": true
+    },
+    "defaultMetaDescription": {
+      "type": "string",
+      "minLength": 120,
+      "maxLength": 155,
+      "required": true
+    },
+    "siteUrl": {
+      "type": "uid",
+      "targetField": "defaultMetaTitle",
+      "required": true
+    },
+    "defaultOgImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

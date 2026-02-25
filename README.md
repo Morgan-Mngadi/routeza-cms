@@ -32,6 +32,31 @@ npm run build
 yarn build
 ```
 
+### `import:redirects`
+
+Bulk import redirects from CSV into the `redirects` collection type.
+
+1. Create a CSV file:
+
+```csv
+fromPath,toUrl,statusCode,isActive,notes
+/old-page,/new-page,301,true,legacy route
+/old-news,/news/new-article,302,true,temp redirect
+```
+
+2. Run import:
+
+```bash
+STRAPI_URL=http://localhost:1337 \
+STRAPI_TOKEN=your_strapi_token \
+npm run import:redirects -- ./redirects.csv
+```
+
+Options:
+- `REDIRECT_UPSERT_MODE=update|skip` (default: `update`)
+- `DRY_RUN=true` to validate only, without writing
+- `FORCE_PUBLISH=true` to set `publishedAt` during import
+
 ## ⚙️ Deployment
 
 Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.

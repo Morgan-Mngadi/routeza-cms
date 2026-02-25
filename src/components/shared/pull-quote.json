@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_shared_pull_quotes",
+  "info": {
+    "displayName": "Pull Quote"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "author": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

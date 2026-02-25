@@ -23,6 +23,7 @@ export interface SeoSeo extends Struct.ComponentSchema {
     noindex: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
+    ogImage: Schema.Attribute.Media<'images'>;
     schemaJson: Schema.Attribute.JSON;
   };
 }

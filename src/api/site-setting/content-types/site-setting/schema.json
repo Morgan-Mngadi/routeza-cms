@@ -15,23 +15,23 @@
       "type": "string",
       "minLength": 20,
       "maxLength": 60,
-      "required": true
+      "required": false
     },
     "defaultMetaDescription": {
       "type": "string",
       "minLength": 120,
       "maxLength": 155,
-      "required": true
+      "required": false
     },
     "siteUrl": {
       "type": "uid",
       "targetField": "defaultMetaTitle",
-      "required": true
+      "required": false
     },
     "defaultOgImage": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",

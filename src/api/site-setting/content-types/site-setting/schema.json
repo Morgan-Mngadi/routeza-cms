@@ -38,6 +38,9 @@
         "videos",
         "audios"
       ]
+    },
+    "robotsTxt": {
+      "type": "text"
     }
   }
 }

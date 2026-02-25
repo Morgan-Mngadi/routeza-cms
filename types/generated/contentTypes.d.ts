@@ -649,6 +649,7 @@ export interface ApiSiteSettingSiteSetting extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    robotsTxt: Schema.Attribute.Text;
     siteUrl: Schema.Attribute.UID<'defaultMetaTitle'> &
       Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;

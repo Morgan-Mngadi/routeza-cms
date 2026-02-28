@@ -1,0 +1,38 @@
+[
+  {
+    "title": "New Electric Buses Added to Cape Town Fleet",
+    "date": "Jan 15, 2026",
+    "summary": "The city has introduced 50 new electric buses to reduce carbon emissions.",
+    "category": "Transit",
+    "content": "The city has introduced 50 new electric buses to reduce carbon emissions. This rollout expands cleaner urban mobility options and may improve reliability on selected routes.",
+    "tags": ["bus"],
+    "metaTitle": "New Electric Buses Added to Cape Town Fleet | Commute ZA",
+    "metaDescription": "Cape Town has introduced 50 electric buses to support cleaner public transport operations.",
+    "canonicalUrl": "https://route-finder-sa.onrender.com/news/new-electric-buses-added-to-cape-town-fleet",
+    "noindex": false
+  },
+  {
+    "title": "Gautrain Expansion Routes Announced",
+    "date": "Jan 12, 2026",
+    "summary": "New stations planned for Soweto and Fourways by 2028.",
+    "category": "Infrastructure",
+    "content": "New stations planned for Soweto and Fourways by 2028. The proposed expansion aims to improve accessibility and network reach for commuters across Gauteng.",
+    "tags": ["train"],
+    "metaTitle": "Gautrain Expansion Routes Announced | Commute ZA",
+    "metaDescription": "Planned Gautrain expansion routes include future stations in Soweto and Fourways.",
+    "canonicalUrl": "https://route-finder-sa.onrender.com/news/gautrain-expansion-routes-announced",
+    "noindex": false
+  },
+  {
+    "title": "E-Hailing Regulations Update",
+    "date": "Jan 10, 2026",
+    "summary": "New safety features now mandatory for all e-hailing drivers.",
+    "category": "Regulation",
+    "content": "New safety features now mandatory for all e-hailing drivers. The update focuses on passenger protection requirements and compliance obligations for operators.",
+    "tags": ["taxi"],
+    "metaTitle": "E-Hailing Regulations Update | Commute ZA",
+    "metaDescription": "New e-hailing safety requirements are now mandatory for drivers and operators.",
+    "canonicalUrl": "https://route-finder-sa.onrender.com/news/e-hailing-regulations-update",
+    "noindex": false
+  }
+]

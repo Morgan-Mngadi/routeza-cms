@@ -41,6 +41,9 @@
     },
     "robotsTxt": {
       "type": "text"
+    },
+    "analyticsHeadCode": {
+      "type": "text"
     }
   }
 }

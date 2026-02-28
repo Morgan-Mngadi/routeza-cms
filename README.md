@@ -57,6 +57,58 @@ Options:
 - `DRY_RUN=true` to validate only, without writing
 - `FORCE_PUBLISH=true` to set `publishedAt` during import
 
+### `import:blog`
+
+Bulk import blog posts from JSON or CSV into the `blog-posts` collection type.
+
+```bash
+STRAPI_URL=http://localhost:1337 \
+STRAPI_TOKEN=your_strapi_token \
+DEFAULT_COVER_IMAGE_ID=1 \
+npm run import:blog -- ./scripts/blog.seed.json
+```
+
+### `import:news`
+
+Bulk import news articles from JSON or CSV into the `news-articles` collection type.
+
+```bash
+STRAPI_URL=http://localhost:1337 \
+STRAPI_TOKEN=your_strapi_token \
+DEFAULT_COVER_IMAGE_ID=1 \
+npm run import:news -- ./scripts/news.seed.json
+```
+
+Shared options for blog/news imports:
+- `ARTICLE_UPSERT_MODE=update|skip` (default: `update`)
+- `DRY_RUN=true` to validate only
+- `FORCE_PUBLISH=true` to publish on import
+- `DEFAULT_COVER_IMAGE_ID=...` if cover image is required
+
+### `import:pages`
+
+Bulk import page entries from JSON or CSV into the `pages` collection type.
+
+Recommended first run (creates drafts unless already published):
+
+```bash
+STRAPI_URL=http://localhost:1337 \
+STRAPI_TOKEN=your_strapi_token \
+npm run import:pages -- ./scripts/pages.seed.json
+```
+
+CSV header format:
+
+```csv
+routePath,pageName,content,isActive,metaTitle,metaDescription,canonicalUrl,noindex,schemaJson
+/,Home,,true,Journey Planner for South Africa | Commute ZA,Plan train bus taxi...,https://route-finder-sa.onrender.com/,false,"{""@context"":""https://schema.org""}"
+```
+
+Options:
+- `PAGE_UPSERT_MODE=update|skip` (default: `update`)
+- `DRY_RUN=true` to validate only
+- `FORCE_PUBLISH=true` to publish on import
+
 ## ⚙️ Deployment
 
 Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.

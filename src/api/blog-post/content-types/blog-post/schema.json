@@ -45,6 +45,12 @@
       "component": "seo.seo",
       "repeatable": true,
       "required": true
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::content-tag.content-tag",
+      "inversedBy": "blogPosts"
     }
   }
 }

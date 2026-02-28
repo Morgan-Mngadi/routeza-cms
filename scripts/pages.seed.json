@@ -1,0 +1,82 @@
+[
+  {
+    "routePath": "/",
+    "pageName": "Home",
+    "content": "# Commute ZA\n\n## Plan Smarter Daily Trips\nCommute ZA helps South African commuters compare practical travel options across buses, trains, taxis and e-hailing with clear journey context.\n\n## What You Can Do Here\n- Compare common transport modes in one place.\n- Find nearby stations and ranks from your location.\n- Explore route details before you leave.\n\n## Why It Matters\nReliable route context reduces uncertainty, saves time and helps commuters make safer day-to-day travel decisions.",
+    "isActive": true,
+    "metaTitle": "Journey Planner for South Africa | Commute ZA",
+    "metaDescription": "Plan train, bus, taxi and e-hailing routes across South Africa with live journey options, practical timings and clear steps for daily commuting.",
+    "canonicalUrl": "https://route-finder-sa.onrender.com/",
+    "noindex": false
+  },
+  {
+    "routePath": "/ai-planner",
+    "pageName": "AI Planner",
+    "content": "# AI Planner\n\n## Build a Trip Plan Around Your Day\nUse plain language to describe where you need to go and what matters most, then get practical travel suggestions you can validate against live options.\n\n## Best Inputs for Better Results\n- Start point and destination.\n- Preferred departure or arrival time.\n- Priorities such as cost, speed or fewer transfers.\n\n## Important Note\nAI output is planning guidance. Always confirm final route details and service availability before travel.",
+    "isActive": true,
+    "metaTitle": "AI Trip Planner for SA Journeys | Commute ZA",
+    "metaDescription": "Create tailored journey ideas with AI using your travel preferences, then explore practical multimodal options for moving across South Africa.",
+    "canonicalUrl": "https://route-finder-sa.onrender.com/ai-planner",
+    "noindex": false
+  },
+  {
+    "routePath": "/bus-stations",
+    "pageName": "Bus Stations",
+    "content": "# Bus Stations Near You\n\n## Find Nearby Bus Access Points\nDiscover nearby bus stations and stops with quick distance context, operator information and route support to help you decide faster.\n\n## How to Use This Page\n- Enable location to fetch nearby stations.\n- Select a station to view route context.\n- Compare estimated distance and travel practicality.\n\n## Related Articles\nThis page can automatically show up to two latest articles tagged with \"bus\" from CMS.",
+    "isActive": true,
+    "metaTitle": "Bus Stations Near You in SA | Commute ZA",
+    "metaDescription": "Locate nearby bus stations in South Africa, compare options around your area and get practical route context before you set off.",
+    "canonicalUrl": "https://route-finder-sa.onrender.com/bus-stations",
+    "noindex": false
+  },
+  {
+    "routePath": "/contact",
+    "pageName": "Contact",
+    "content": "# Contact Commute ZA\n\n## Need Help or Want to Collaborate?\nUse our contact form to share support questions, feedback or partnership requests.\n\n## Include These Details\n- What you were trying to do.\n- The route, page or feature involved.\n- Screenshots or steps to reproduce (if relevant).\n\n## Response Times\nWe aim to review messages quickly and respond with clear next steps.",
+    "isActive": true,
+    "metaTitle": "Contact Commute ZA Support Team | Commute ZA",
+    "metaDescription": "Contact Commute ZA for support, feedback or partnership queries, and share details so we can respond with helpful, relevant guidance.",
+    "canonicalUrl": "https://route-finder-sa.onrender.com/contact",
+    "noindex": false
+  },
+  {
+    "routePath": "/privacy",
+    "pageName": "Privacy",
+    "content": "# Privacy Policy\n\n## What We Collect\nWe may process information needed to provide route planning and support services, including technical usage data and submitted form details.\n\n## How We Use Information\n- Deliver and improve core product functionality.\n- Respond to support requests and user feedback.\n- Maintain platform security and reliability.\n\n## Your Choices\nYou can contact us to request updates or clarification regarding your personal data.",
+    "isActive": true,
+    "metaTitle": "Privacy Policy and Data Use | Commute ZA",
+    "metaDescription": "Read how Commute ZA collects, uses and protects personal information, including your rights, choices and key data handling practices.",
+    "canonicalUrl": "https://route-finder-sa.onrender.com/privacy",
+    "noindex": false
+  },
+  {
+    "routePath": "/taxi-ranks",
+    "pageName": "Taxi Ranks",
+    "content": "# Taxi Ranks Near You\n\n## Discover Nearby Minibus Taxi Access\nFind nearby taxi ranks with location context to help you plan practical first-mile and last-mile travel.\n\n## Using This Page\n- Enable location to detect nearby ranks.\n- Review rank details and surrounding transport options.\n- Use route planning tools to combine taxi travel with other modes.\n\n## Commuter Reminder\nConfirm local queue conditions and route availability at the rank when possible.",
+    "isActive": true,
+    "metaTitle": "Taxi Ranks Near You in South Africa | Commute ZA",
+    "metaDescription": "Find nearby minibus taxi ranks in South Africa, view location details and use route context to choose a practical option for your trip.",
+    "canonicalUrl": "https://route-finder-sa.onrender.com/taxi-ranks",
+    "noindex": false
+  },
+  {
+    "routePath": "/terms",
+    "pageName": "Terms",
+    "content": "# Terms of Service\n\n## Platform Use\nBy using Commute ZA, you agree to use the platform lawfully and responsibly for journey planning and related information services.\n\n## Service Scope\nRoute outputs and travel context are provided on a best-effort basis and may change as third-party and local transport conditions change.\n\n## Liability\nUsers remain responsible for final travel decisions and real-world safety checks before and during travel.",
+    "isActive": true,
+    "metaTitle": "Terms of Service and Usage Rules | Commute ZA",
+    "metaDescription": "Review Commute ZA terms covering platform usage, service availability, responsibilities and legal conditions for using our transport tools.",
+    "canonicalUrl": "https://route-finder-sa.onrender.com/terms",
+    "noindex": false
+  },
+  {
+    "routePath": "/train-stations",
+    "pageName": "Train Stations",
+    "content": "# Train Stations Near You\n\n## Locate Rail Access Points Quickly\nFind nearby train stations and review route context to support everyday commuting and longer city connections.\n\n## What You Can Check\n- Nearby station proximity from your current location.\n- Route context for onward travel planning.\n- Multi-modal options that combine train with bus or taxi access.\n\n## Practical Tip\nFor peak periods, allow extra time for station access and transfers.",
+    "isActive": true,
+    "metaTitle": "Train Stations Near You in SA | Commute ZA",
+    "metaDescription": "Find nearby train stations in South Africa, including key Metrorail and Gautrain stops, with simple route context to support your next journey.",
+    "canonicalUrl": "https://route-finder-sa.onrender.com/train-stations",
+    "noindex": false
+  }
+]

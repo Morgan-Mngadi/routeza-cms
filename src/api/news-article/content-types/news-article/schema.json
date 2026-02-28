@@ -50,6 +50,12 @@
       "type": "component",
       "component": "shared.pull-quote",
       "repeatable": false
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::content-tag.content-tag",
+      "inversedBy": "newsArticles"
     }
   }
 }

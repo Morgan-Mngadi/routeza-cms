@@ -12,6 +12,7 @@
     "import:blog": "node scripts/import-articles.mjs blog",
     "import:news": "node scripts/import-articles.mjs news",
     "import:pages": "node scripts/import-pages.mjs",
+    "sync:page-content": "node scripts/sync-page-content.mjs",
     "import:redirects": "node scripts/import-redirects.mjs",
     "start": "strapi start",
     "strapi": "strapi",

@@ -85,6 +85,21 @@ Shared options for blog/news imports:
 - `FORCE_PUBLISH=true` to publish on import
 - `DEFAULT_COVER_IMAGE_ID=...` if cover image is required
 
+### `sync:page-content`
+
+Update only the `content` field for existing `pages` entries by matching `routePath`.
+
+```bash
+STRAPI_URL=http://localhost:1337 \
+STRAPI_TOKEN=your_strapi_token \
+DRY_RUN=true \
+npm run sync:page-content -- ./scripts/pages.seed.json
+```
+
+Options:
+- `PAGE_CONTENT_UPSERT_MODE=skip|create` (default: `skip`)
+- `FORCE_PUBLISH=true` to republish while updating content
+
 ### `import:pages`
 
 Bulk import page entries from JSON or CSV into the `pages` collection type.

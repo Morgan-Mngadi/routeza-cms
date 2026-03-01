@@ -16,7 +16,8 @@
         "h1",
         "h2",
         "h3",
-        "h4"
+        "h4",
+        "paragraph"
       ],
       "default": "h2",
       "required": true

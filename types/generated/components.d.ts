@@ -50,7 +50,7 @@ export interface ArticleSectionHeading extends Struct.ComponentSchema {
     icon: 'heading';
   };
   attributes: {
-    level: Schema.Attribute.Enumeration<['h1', 'h2', 'h3', 'h4']> &
+    level: Schema.Attribute.Enumeration<['h1', 'h2', 'h3', 'h4', 'paragraph']> &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'h2'>;
     text: Schema.Attribute.String & Schema.Attribute.Required;
@@ -121,7 +121,7 @@ export interface PageSectionHeading extends Struct.ComponentSchema {
     icon: 'heading';
   };
   attributes: {
-    level: Schema.Attribute.Enumeration<['h1', 'h2', 'h3', 'h4']> &
+    level: Schema.Attribute.Enumeration<['h1', 'h2', 'h3', 'h4', 'paragraph']> &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'h2'>;
     text: Schema.Attribute.String & Schema.Attribute.Required;

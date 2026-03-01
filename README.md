@@ -151,3 +151,104 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 ---
 
 <sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+
+### `pages` content blocks (new)
+
+The `pages` content type now supports a dynamic zone called `contentBlocks` so content can be managed in CMS while layout/styling stays in frontend code.
+
+Available block components:
+- `page.section-heading` (`text`, `level`)
+- `page.rich-text` (`body`)
+- `page.list` (`title`, `listStyle`, `itemsText`)
+- `page.callout` (`title`, `body`, `tone`)
+- `page.cta` (`title`, `body`, `buttonLabel`, `buttonHref`)
+- `shared.pull-quote` (`text`, `author`, `role`)
+
+After adding/changing Strapi schema files, restart Strapi:
+
+```bash
+npm run develop
+# or restart your deployed service
+```
+
+### `sync:page-blocks`
+
+Convert existing `pages` text `content` into dynamic-zone `contentBlocks` and update existing entries by `routePath`.
+
+```bash
+STRAPI_URL=http://localhost:1337 \
+STRAPI_TOKEN=your_strapi_token \
+DRY_RUN=true \
+npm run sync:page-blocks -- ./scripts/pages.seed.json
+```
+
+Options:
+- `PAGE_BLOCKS_UPSERT_MODE=skip|create` (default: `skip`)
+- `FORCE_PUBLISH=true` to republish while updating blocks
+- `CLEAR_LEGACY_CONTENT=true` to clear old `content` text after migrating to blocks
+
+### `migrate:page-blocks`
+
+Convert existing `pages.content` in Strapi into `contentBlocks` in-place (no seed file required).
+
+Safe default behavior:
+- scans existing pages from Strapi
+- skips pages that already have `contentBlocks`
+- skips pages with empty legacy `content`
+
+```bash
+STRAPI_URL=http://localhost:1337 \
+STRAPI_TOKEN=your_strapi_token \
+DRY_RUN=true \
+npm run migrate:page-blocks
+```
+
+Target a single route:
+
+```bash
+STRAPI_URL=http://localhost:1337 \
+STRAPI_TOKEN=your_strapi_token \
+DRY_RUN=true \
+ROUTE_PATH=/ai-planner \
+npm run migrate:page-blocks
+```
+
+Options:
+- `ONLY_WHEN_EMPTY_BLOCKS=false` to overwrite existing `contentBlocks`
+- `FORCE_PUBLISH=true` to republish while migrating
+- `CLEAR_LEGACY_CONTENT=true` to clear old `content` text after migration
+- `PAGE_SIZE=1..100` to tune pagination size (default `100`)
+
+### `migrate:blog-blocks` and `migrate:news-blocks`
+
+Convert existing article `content` in Strapi into `contentBlocks` in-place.
+
+Dry run examples:
+
+```bash
+STRAPI_URL=http://localhost:1337 \
+STRAPI_TOKEN=your_strapi_token \
+DRY_RUN=true \
+npm run migrate:blog-blocks
+
+STRAPI_URL=http://localhost:1337 \
+STRAPI_TOKEN=your_strapi_token \
+DRY_RUN=true \
+npm run migrate:news-blocks
+```
+
+Target a single article by slug:
+
+```bash
+STRAPI_URL=http://localhost:1337 \
+STRAPI_TOKEN=your_strapi_token \
+DRY_RUN=true \
+SLUG=top-5-hidden-gems-accessible-by-train \
+npm run migrate:blog-blocks
+```
+
+Options:
+- `ONLY_WHEN_EMPTY_BLOCKS=false` to overwrite existing blocks
+- `FORCE_PUBLISH=true` to republish while migrating
+- `CLEAR_LEGACY_CONTENT=true` to clear old `content` field
+- `PAGE_SIZE=1..100` to tune pagination size (default `100`)

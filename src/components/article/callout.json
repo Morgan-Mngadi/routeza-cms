@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_article_callouts",
+  "info": {
+    "displayName": "Callout",
+    "icon": "information"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "text",
+      "required": true
+    },
+    "tone": {
+      "type": "enumeration",
+      "enum": [
+        "neutral",
+        "info",
+        "success",
+        "warning"
+      ],
+      "default": "neutral",
+      "required": true
+    }
+  },
+  "config": {}
+}

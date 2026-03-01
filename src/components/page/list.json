@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_page_lists",
+  "info": {
+    "displayName": "List",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "listStyle": {
+      "type": "enumeration",
+      "enum": [
+        "unordered",
+        "ordered"
+      ],
+      "default": "unordered",
+      "required": true
+    },
+    "itemsText": {
+      "type": "text",
+      "required": true
+    }
+  },
+  "config": {}
+}

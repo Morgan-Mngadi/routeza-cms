@@ -26,6 +26,16 @@
     "content": {
       "type": "richtext"
     },
+    "contentBlocks": {
+      "type": "dynamiczone",
+      "components": [
+        "article.section-heading",
+        "article.rich-text",
+        "article.list",
+        "article.callout",
+        "shared.pull-quote"
+      ]
+    },
     "coverImage": {
       "type": "media",
       "multiple": false,

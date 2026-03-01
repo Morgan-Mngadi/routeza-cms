@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_page_section_headings",
+  "info": {
+    "displayName": "Section Heading",
+    "icon": "heading"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "level": {
+      "type": "enumeration",
+      "enum": [
+        "h1",
+        "h2",
+        "h3",
+        "h4"
+      ],
+      "default": "h2",
+      "required": true
+    }
+  },
+  "config": {}
+}

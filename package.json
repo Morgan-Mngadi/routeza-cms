@@ -17,7 +17,11 @@
     "start": "strapi start",
     "strapi": "strapi",
     "upgrade": "npx @strapi/upgrade latest",
-    "upgrade:dry": "npx @strapi/upgrade latest --dry"
+    "upgrade:dry": "npx @strapi/upgrade latest --dry",
+    "sync:page-blocks": "node scripts/sync-page-blocks.mjs",
+    "migrate:page-blocks": "node scripts/migrate-page-blocks-inplace.mjs",
+    "migrate:blog-blocks": "node scripts/migrate-article-blocks-inplace.mjs blog",
+    "migrate:news-blocks": "node scripts/migrate-article-blocks-inplace.mjs news"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.36.1",

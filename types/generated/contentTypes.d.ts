@@ -479,6 +479,15 @@ export interface ApiBlogPostBlogPost extends Struct.CollectionTypeSchema {
   };
   attributes: {
     content: Schema.Attribute.RichText;
+    contentBlocks: Schema.Attribute.DynamicZone<
+      [
+        'article.section-heading',
+        'article.rich-text',
+        'article.list',
+        'article.callout',
+        'shared.pull-quote',
+      ]
+    >;
     coverImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     > &
@@ -562,6 +571,15 @@ export interface ApiNewsArticleNewsArticle extends Struct.CollectionTypeSchema {
   };
   attributes: {
     content: Schema.Attribute.RichText;
+    contentBlocks: Schema.Attribute.DynamicZone<
+      [
+        'article.section-heading',
+        'article.rich-text',
+        'article.list',
+        'article.callout',
+        'shared.pull-quote',
+      ]
+    >;
     coverImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     > &
@@ -604,6 +622,16 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
   };
   attributes: {
     content: Schema.Attribute.RichText;
+    contentBlocks: Schema.Attribute.DynamicZone<
+      [
+        'page.section-heading',
+        'page.rich-text',
+        'page.list',
+        'page.callout',
+        'page.cta',
+        'shared.pull-quote',
+      ]
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

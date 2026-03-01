@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_page_ctas",
+  "info": {
+    "displayName": "Call To Action",
+    "icon": "cursor"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "text"
+    },
+    "buttonLabel": {
+      "type": "string",
+      "required": true
+    },
+    "buttonHref": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

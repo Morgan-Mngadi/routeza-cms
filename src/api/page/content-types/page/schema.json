@@ -31,6 +31,17 @@
     "content": {
       "type": "richtext"
     },
+    "contentBlocks": {
+      "type": "dynamiczone",
+      "components": [
+        "page.section-heading",
+        "page.rich-text",
+        "page.list",
+        "page.callout",
+        "page.cta",
+        "shared.pull-quote"
+      ]
+    },
     "seo": {
       "type": "component",
       "component": "seo.seo",

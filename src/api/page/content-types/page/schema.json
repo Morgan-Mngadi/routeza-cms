@@ -29,8 +29,7 @@
       ]
     },
     "content": {
-      "type": "richtext",
-      "customField": "plugin::smart-links.smart-richtext"
+      "type": "richtext"
     },
     "contentBlocks": {
       "type": "dynamiczone",

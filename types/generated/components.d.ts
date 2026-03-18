@@ -39,9 +39,7 @@ export interface ArticleRichText extends Struct.ComponentSchema {
     icon: 'align-left';
   };
   attributes: {
-    body: Schema.Attribute.RichText &
-      Schema.Attribute.Required &
-      Schema.Attribute.CustomField<'plugin::smart-links.smart-richtext'>;
+    body: Schema.Attribute.RichText & Schema.Attribute.Required;
   };
 }
 
@@ -112,9 +110,7 @@ export interface PageRichText extends Struct.ComponentSchema {
     icon: 'align-left';
   };
   attributes: {
-    body: Schema.Attribute.RichText &
-      Schema.Attribute.Required &
-      Schema.Attribute.CustomField<'plugin::smart-links.smart-richtext'>;
+    body: Schema.Attribute.RichText & Schema.Attribute.Required;
   };
 }
 

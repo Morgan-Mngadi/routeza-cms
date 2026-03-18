@@ -478,8 +478,7 @@ export interface ApiBlogPostBlogPost extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    content: Schema.Attribute.RichText &
-      Schema.Attribute.CustomField<'plugin::smart-links.smart-richtext'>;
+    content: Schema.Attribute.RichText;
     contentBlocks: Schema.Attribute.DynamicZone<
       [
         'article.section-heading',
@@ -571,8 +570,7 @@ export interface ApiNewsArticleNewsArticle extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    content: Schema.Attribute.RichText &
-      Schema.Attribute.CustomField<'plugin::smart-links.smart-richtext'>;
+    content: Schema.Attribute.RichText;
     contentBlocks: Schema.Attribute.DynamicZone<
       [
         'article.section-heading',
@@ -623,8 +621,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    content: Schema.Attribute.RichText &
-      Schema.Attribute.CustomField<'plugin::smart-links.smart-richtext'>;
+    content: Schema.Attribute.RichText;
     contentBlocks: Schema.Attribute.DynamicZone<
       [
         'page.section-heading',

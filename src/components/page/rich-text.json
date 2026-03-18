@@ -8,7 +8,6 @@
   "attributes": {
     "body": {
       "type": "richtext",
-      "customField": "plugin::smart-links.smart-richtext",
       "required": true
     }
   },

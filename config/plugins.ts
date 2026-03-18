@@ -6,19 +6,10 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Plugin =>
   const acl = env('S3_ACL');
 
   if (uploadProvider !== 'aws-s3') {
-    return {
-      'smart-links': {
-        enabled: true,
-        resolve: './src/plugins/smart-links',
-      },
-    };
+    return {};
   }
 
   return {
-    'smart-links': {
-      enabled: true,
-      resolve: './src/plugins/smart-links',
-    },
     upload: {
       config: {
         provider: 'aws-s3',

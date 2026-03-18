@@ -39,7 +39,9 @@ export interface ArticleRichText extends Struct.ComponentSchema {
     icon: 'align-left';
   };
   attributes: {
-    body: Schema.Attribute.RichText & Schema.Attribute.Required;
+    body: Schema.Attribute.RichText &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<'plugin::smart-links.smart-richtext'>;
   };
 }
 
@@ -110,7 +112,9 @@ export interface PageRichText extends Struct.ComponentSchema {
     icon: 'align-left';
   };
   attributes: {
-    body: Schema.Attribute.RichText & Schema.Attribute.Required;
+    body: Schema.Attribute.RichText &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<'plugin::smart-links.smart-richtext'>;
   };
 }
 
@@ -152,7 +156,7 @@ export interface SeoSeo extends Struct.ComponentSchema {
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
     ogImage: Schema.Attribute.Media<'images'>;
-    schemaJson: Schema.Attribute.JSON;
+    schemaJson: Schema.Attribute.Text;
   };
 }
 

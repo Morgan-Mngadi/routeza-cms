@@ -148,16 +148,10 @@ function parseCsv(text) {
   return mapped;
 }
 
-function safeJson(value, lineNumber) {
-  if (!value) return undefined;
-  if (typeof value === "object") return value;
+function normalizeSchemaJson(value) {
+  if (value === undefined || value === null) return undefined;
   const trimmed = String(value).trim();
-  if (!trimmed) return undefined;
-  try {
-    return JSON.parse(trimmed);
-  } catch {
-    throw new Error(`[line ${lineNumber}] Invalid schemaJson JSON.`);
-  }
+  return trimmed || undefined;
 }
 
 function normalizeDate(value) {
@@ -320,7 +314,7 @@ function mapRowToPayload(row, type, tagIds) {
   );
   const canonicalUrl = String(row.canonicalUrl ?? "").trim();
   const noindex = parseBoolean(row.noindex, false);
-  const schemaJson = safeJson(row.schemaJson, row.__line);
+  const schemaJson = normalizeSchemaJson(row.schemaJson);
 
   const seoEntry = {
     ...(metaTitle ? { metaTitle } : {}),

@@ -28,7 +28,7 @@
       "required": true
     },
     "schemaJson": {
-      "type": "json",
+      "type": "text",
       "required": false
     },
     "ogImage": {

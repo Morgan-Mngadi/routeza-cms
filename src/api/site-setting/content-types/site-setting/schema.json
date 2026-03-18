@@ -42,6 +42,9 @@
     "robotsTxt": {
       "type": "text"
     },
+    "sitemapXml": {
+      "type": "text"
+    },
     "analyticsHeadCode": {
       "type": "text"
     }

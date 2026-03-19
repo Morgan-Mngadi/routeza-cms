@@ -6,10 +6,19 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Plugin =>
   const acl = env('S3_ACL');
 
   if (uploadProvider !== 'aws-s3') {
-    return {};
+    return {
+      'redirect-import': {
+        enabled: true,
+        resolve: './src/plugins/redirect-import',
+      },
+    };
   }
 
   return {
+    'redirect-import': {
+      enabled: true,
+      resolve: './src/plugins/redirect-import',
+    },
     upload: {
       config: {
         provider: 'aws-s3',

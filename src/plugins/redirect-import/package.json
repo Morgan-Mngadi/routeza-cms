@@ -1,0 +1,15 @@
+{
+  "name": "redirect-import",
+  "version": "0.1.0",
+  "private": true,
+  "strapi": {
+    "name": "redirect-import",
+    "displayName": "Redirect Import",
+    "kind": "plugin",
+    "description": "Bulk import redirects from CSV inside the Strapi admin."
+  },
+  "exports": {
+    "./strapi-server": "./strapi-server.js",
+    "./package.json": "./package.json"
+  }
+}

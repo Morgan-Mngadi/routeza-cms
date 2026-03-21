@@ -1,5 +1,5 @@
 import type { StrapiApp } from '@strapi/strapi/admin';
-import { Upload } from '@strapi/icons';
+import { CloudUpload } from '@strapi/icons';
 
 export default {
   config: {
@@ -8,12 +8,18 @@ export default {
   register(app: StrapiApp) {
     app.addMenuLink({
       to: 'plugins/redirect-import',
-      icon: Upload,
+      icon: CloudUpload,
       intlLabel: {
         id: 'redirect-import.menu.label',
         defaultMessage: 'Redirect Import',
       },
-      Component: () => import('./pages/RedirectImportPage'),
+      Component: async () => {
+        const page = await import('./pages/RedirectImportPage');
+
+        return {
+          default: page.default,
+        };
+      },
       permissions: [],
       position: 9,
     });

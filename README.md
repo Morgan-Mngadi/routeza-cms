@@ -36,6 +36,8 @@ yarn build
 
 Bulk import redirects from CSV into the `redirects` collection type.
 
+Published redirects are also enforced server-side by Strapi for public `GET` and `HEAD` requests. Active entries in the CMS return real HTTP `301` or `302` responses for matching paths.
+
 1. Create a CSV file:
 
 ```csv

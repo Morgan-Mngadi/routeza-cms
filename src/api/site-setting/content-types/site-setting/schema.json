@@ -47,6 +47,9 @@
     },
     "analyticsHeadCode": {
       "type": "text"
+    },
+    "sitewideSchemaJson": {
+      "type": "text"
     }
   }
 }

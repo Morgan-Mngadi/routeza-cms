@@ -757,6 +757,7 @@ export interface ApiSiteSettingSiteSetting extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     robotsTxt: Schema.Attribute.Text;
+    sitewideSchemaJson: Schema.Attribute.Text;
     sitemapXml: Schema.Attribute.Text;
     siteUrl: Schema.Attribute.UID<'defaultMetaTitle'>;
     updatedAt: Schema.Attribute.DateTime;

@@ -45,6 +45,12 @@
     "sitemapXml": {
       "type": "text"
     },
+    "globalHeadCode": {
+      "type": "text"
+    },
+    "globalBodyCode": {
+      "type": "text"
+    },
     "analyticsHeadCode": {
       "type": "text"
     },

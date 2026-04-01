@@ -1,14 +1,11 @@
 import type { StrapiApp } from '@strapi/strapi/admin';
 import { CloudUpload } from '@strapi/icons';
-import InternalLinksPanel from './components/InternalLinksPanel';
 
 export default {
   config: {
     locales: [],
   },
   register(app: StrapiApp) {
-    app.getPlugin('content-manager').apis.addEditViewSidePanel([InternalLinksPanel]);
-
     app.addMenuLink({
       to: 'plugins/redirect-import',
       icon: CloudUpload,

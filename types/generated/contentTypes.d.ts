@@ -750,6 +750,8 @@ export interface ApiSiteSettingSiteSetting extends Struct.SingleTypeSchema {
     defaultOgImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
+    globalBodyCode: Schema.Attribute.Text;
+    globalHeadCode: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

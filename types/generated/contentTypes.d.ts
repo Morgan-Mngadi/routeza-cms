@@ -758,10 +758,11 @@ export interface ApiSiteSettingSiteSetting extends Struct.SingleTypeSchema {
       'api::site-setting.site-setting'
     > &
       Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     robotsTxt: Schema.Attribute.Text;
-    sitewideSchemaJson: Schema.Attribute.Text;
     sitemapXml: Schema.Attribute.Text;
     siteUrl: Schema.Attribute.UID<'defaultMetaTitle'>;
+    sitewideSchemaJson: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

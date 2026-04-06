@@ -39,7 +39,9 @@ export interface ArticleRichText extends Struct.ComponentSchema {
     icon: 'align-left';
   };
   attributes: {
-    body: Schema.Attribute.RichText & Schema.Attribute.Required;
+    body: Schema.Attribute.RichText &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<'global::tiptap'>;
   };
 }
 
@@ -110,7 +112,9 @@ export interface PageRichText extends Struct.ComponentSchema {
     icon: 'align-left';
   };
   attributes: {
-    body: Schema.Attribute.RichText & Schema.Attribute.Required;
+    body: Schema.Attribute.RichText &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<'global::tiptap'>;
   };
 }
 

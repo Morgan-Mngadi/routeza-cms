@@ -8,6 +8,7 @@
   "attributes": {
     "body": {
       "type": "richtext",
+      "customField": "global::tiptap",
       "required": true
     }
   },

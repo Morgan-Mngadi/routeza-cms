@@ -1,0 +1,153 @@
+.routeza-tiptap {
+  display: grid;
+  gap: 12px;
+}
+
+.routeza-tiptap__toolbar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.routeza-tiptap__button {
+  border: 1px solid #dcdce4;
+  background: #fff;
+  color: #32324d;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.routeza-tiptap__button[aria-pressed='true'] {
+  background: #f0f0ff;
+  border-color: #4945ff;
+  color: #4945ff;
+}
+
+.routeza-tiptap__button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.routeza-tiptap__surface {
+  border: 1px solid #dcdce4;
+  border-radius: 12px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.routeza-tiptap__content {
+  min-height: 240px;
+  padding: 16px;
+}
+
+.routeza-tiptap__content .ProseMirror {
+  min-height: 208px;
+  outline: none;
+  color: #32324d;
+  line-height: 1.65;
+}
+
+.routeza-tiptap__content .ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  color: #8e8ea9;
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.routeza-tiptap__content .ProseMirror h2,
+.routeza-tiptap__content .ProseMirror h3,
+.routeza-tiptap__content .ProseMirror h4 {
+  line-height: 1.25;
+  margin: 1.2em 0 0.5em;
+}
+
+.routeza-tiptap__content .ProseMirror h2 {
+  font-size: 1.5rem;
+}
+
+.routeza-tiptap__content .ProseMirror h3 {
+  font-size: 1.25rem;
+}
+
+.routeza-tiptap__content .ProseMirror blockquote {
+  border-left: 3px solid #4945ff;
+  margin: 1rem 0;
+  padding-left: 1rem;
+  color: #666687;
+}
+
+.routeza-tiptap__content .ProseMirror ul,
+.routeza-tiptap__content .ProseMirror ol {
+  padding-left: 1.25rem;
+}
+
+.routeza-tiptap__content .ProseMirror a {
+  color: #4945ff;
+  text-decoration: underline;
+}
+
+.routeza-tiptap__link-picker {
+  border-top: 1px solid #f1f1f4;
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+  background: #fcfcff;
+}
+
+.routeza-tiptap__link-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.routeza-tiptap__input {
+  width: 100%;
+  border: 1px solid #dcdce4;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  background: #fff;
+}
+
+.routeza-tiptap__suggestions {
+  display: grid;
+  gap: 6px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.routeza-tiptap__suggestion {
+  width: 100%;
+  text-align: left;
+  border: 1px solid #ececf3;
+  border-radius: 10px;
+  background: #fff;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.routeza-tiptap__suggestion:hover {
+  border-color: #4945ff;
+  background: #f8f8ff;
+}
+
+.routeza-tiptap__suggestion-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #32324d;
+}
+
+.routeza-tiptap__suggestion-meta {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #666687;
+}
+
+.routeza-tiptap__hint {
+  font-size: 12px;
+  color: #666687;
+}

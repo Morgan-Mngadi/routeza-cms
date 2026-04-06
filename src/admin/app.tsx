@@ -1,5 +1,5 @@
 import type { StrapiApp } from '@strapi/strapi/admin';
-import { CloudUpload } from '@strapi/icons';
+import { CloudUpload, Server } from '@strapi/icons';
 
 export default {
   config: {
@@ -27,6 +27,29 @@ export default {
     app.registerPlugin({
       id: 'redirect-import',
       name: 'Redirect Import',
+    });
+
+    app.addMenuLink({
+      to: 'plugins/website-tools',
+      icon: Server,
+      intlLabel: {
+        id: 'website-tools.menu.label',
+        defaultMessage: 'Website Tools',
+      },
+      Component: async () => {
+        const page = await import('./pages/WebsiteToolsPage');
+
+        return {
+          default: page.default,
+        };
+      },
+      permissions: [],
+      position: 10,
+    });
+
+    app.registerPlugin({
+      id: 'website-tools',
+      name: 'Website Tools',
     });
   },
   bootstrap() {},

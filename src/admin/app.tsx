@@ -6,28 +6,6 @@ export default {
     locales: [],
   },
   register(app: StrapiApp) {
-    app.customFields.register({
-      name: 'tiptap',
-      type: 'richtext',
-      intlLabel: {
-        id: 'routeza.tiptap.label',
-        defaultMessage: 'Rich text',
-      },
-      intlDescription: {
-        id: 'routeza.tiptap.description',
-        defaultMessage: 'Rich text editor with inline links and internal link suggestions.',
-      },
-      components: {
-        Input: async () => {
-          const component = await import('./components/TiptapInput');
-
-          return {
-            default: component.default,
-          };
-        },
-      },
-    });
-
     app.addMenuLink({
       to: 'plugins/redirect-import',
       icon: CloudUpload,

@@ -29,8 +29,7 @@
       ]
     },
     "content": {
-      "type": "customField",
-      "customField": "global::tiptap"
+      "type": "richtext"
     },
     "contentBlocks": {
       "type": "dynamiczone",

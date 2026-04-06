@@ -20,6 +20,16 @@
     "noindex": false
   },
   {
+    "routePath": "/blog",
+    "pageName": "Blog",
+    "content": "# Commute ZA Blog\n\n## Practical commuter stories, route tips and travel guides\nExplore articles that help you move through South Africa with more clarity, confidence and better everyday travel decisions.\n\n## What You'll Find Here\n- Practical commuting tips and explainers.\n- Route-focused guides for trains, buses and taxis.\n- Stories and updates that make public transport easier to navigate.\n\n## Keep Exploring\nUse these articles to plan ahead, understand local travel patterns and discover smarter ways to connect your journeys.",
+    "isActive": true,
+    "metaTitle": "Commuter Tips and Travel Guides | Commute ZA",
+    "metaDescription": "Explore practical commuter guides, route tips and travel advice for getting around South Africa using trains, buses, taxis and e-hailing.",
+    "canonicalUrl": "https://route-finder-sa.onrender.com/blog",
+    "noindex": false
+  },
+  {
     "routePath": "/bus-stations",
     "pageName": "Bus Stations",
     "content": "# Bus Stations Near You\n\n## Find Nearby Bus Access Points\nDiscover nearby bus stations and stops with quick distance context, operator information and route support to help you decide faster.\n\n## How to Use This Page\n- Enable location to fetch nearby stations.\n- Select a station to view route context.\n- Compare estimated distance and travel practicality.\n\n## Related Articles\nThis page can automatically show up to two latest articles tagged with \"bus\" from CMS.",

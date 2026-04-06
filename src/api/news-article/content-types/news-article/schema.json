@@ -24,7 +24,7 @@
       "type": "text"
     },
     "content": {
-      "type": "richtext",
+      "type": "customField",
       "customField": "global::tiptap"
     },
     "contentBlocks": {

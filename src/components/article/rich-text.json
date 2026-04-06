@@ -7,7 +7,7 @@
   "options": {},
   "attributes": {
     "body": {
-      "type": "richtext",
+      "type": "customField",
       "customField": "global::tiptap",
       "required": true
     }

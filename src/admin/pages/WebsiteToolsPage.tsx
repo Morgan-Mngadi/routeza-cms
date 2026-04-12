@@ -17,7 +17,7 @@ export default function WebsiteToolsPage() {
   const runPurge = async () => {
     setIsPurging(true);
     try {
-      const response = await post('/website-tools/purge-cache');
+      const response = await post('/website-tools/purge-cache', {});
       setResult(response.data);
       toggleNotification({
         type: 'success',

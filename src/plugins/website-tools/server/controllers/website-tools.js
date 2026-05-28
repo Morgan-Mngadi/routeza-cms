@@ -38,9 +38,19 @@ module.exports = {
         return;
       }
 
+      const hasRawHtml = typeof payload?.raw === 'string' && /^\s*<!doctype html/i.test(payload.raw);
+
       ctx.body = {
         ok: true,
-        ...payload,
+        purgedAt: payload?.purgedAt || new Date().toISOString(),
+        message: payload?.message || 'Website cache purged successfully.',
+        ...(hasRawHtml ? {} : payload),
+        ...(hasRawHtml
+          ? {
+              warning:
+                'The website purge endpoint returned an HTML page instead of JSON. Check WEBSITE_PURGE_URL if this keeps happening.',
+            }
+          : {}),
       };
     } catch (error) {
       ctx.status = 502;

@@ -5,6 +5,9 @@ type PurgeResponse = {
   ok?: boolean;
   purgedAt?: string;
   caches?: Record<string, unknown>;
+  message?: string;
+  warning?: string;
+  raw?: string;
 };
 
 export default function WebsiteToolsPage() {
@@ -18,7 +21,10 @@ export default function WebsiteToolsPage() {
     setIsPurging(true);
     try {
       const response = await post('/website-tools/purge-cache', {});
-      setResult(response.data);
+      setResult({
+        purgedAt: new Date().toISOString(),
+        ...response.data,
+      });
       toggleNotification({
         type: 'success',
         message: 'Website cache purged successfully.',
@@ -31,6 +37,32 @@ export default function WebsiteToolsPage() {
     } finally {
       setIsPurging(false);
     }
+  };
+
+  const formatDate = (value?: string) => {
+    if (!value) {
+      return 'Unknown';
+    }
+
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) {
+      return value;
+    }
+
+    return new Intl.DateTimeFormat(undefined, {
+      dateStyle: 'medium',
+      timeStyle: 'short',
+    }).format(date);
+  };
+
+  const getResultDetails = (value: PurgeResponse) => {
+    if (value.caches) {
+      return JSON.stringify(value.caches, null, 2);
+    }
+
+    const { ok, purgedAt, message, warning, raw, ...details } = value;
+    const hasDetails = Object.keys(details).length > 0;
+    return hasDetails ? JSON.stringify(details, null, 2) : '';
   };
 
   const cardStyle: React.CSSProperties = {
@@ -84,24 +116,60 @@ export default function WebsiteToolsPage() {
 
         {result ? (
           <section style={cardStyle}>
-            <div style={{ display: 'grid', gap: 10 }}>
+            <div style={{ display: 'grid', gap: 12 }}>
               <h2 style={{ margin: 0, fontSize: 20, color: '#221b3d' }}>Latest result</h2>
-              <div style={{ fontSize: 14, color: '#5f5a76' }}>
-                Purged at: <strong>{result.purgedAt ?? 'Unknown'}</strong>
-              </div>
-              <pre
+              <div
                 style={{
-                  margin: 0,
-                  padding: 16,
-                  borderRadius: 12,
-                  background: '#f6f6ff',
-                  border: '1px solid #ecebff',
-                  fontSize: 12,
-                  overflowX: 'auto',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  width: 'fit-content',
+                  borderRadius: 999,
+                  padding: '6px 10px',
+                  background: result.ok === false ? '#fff0f0' : '#eefbf3',
+                  color: result.ok === false ? '#a01313' : '#137333',
+                  fontSize: 13,
+                  fontWeight: 700,
                 }}
               >
-                {JSON.stringify(result.caches ?? result, null, 2)}
-              </pre>
+                {result.ok === false ? 'Purge failed' : result.message ?? 'Website cache purged successfully'}
+              </div>
+              <div style={{ fontSize: 14, color: '#5f5a76' }}>
+                Purged at: <strong>{formatDate(result.purgedAt)}</strong>
+              </div>
+              {result.warning ? (
+                <div
+                  style={{
+                    borderRadius: 12,
+                    padding: 12,
+                    background: '#fff8e6',
+                    border: '1px solid #ffe0a3',
+                    color: '#6f4b00',
+                    fontSize: 13,
+                    lineHeight: 1.5,
+                  }}
+                >
+                  {result.warning}
+                </div>
+              ) : null}
+              {getResultDetails(result) ? (
+                <pre
+                  style={{
+                    margin: 0,
+                    padding: 16,
+                    borderRadius: 12,
+                    background: '#f6f6ff',
+                    border: '1px solid #ecebff',
+                    color: '#221b3d',
+                    fontSize: 12,
+                    lineHeight: 1.5,
+                    overflowX: 'auto',
+                    whiteSpace: 'pre-wrap',
+                    overflowWrap: 'anywhere',
+                  }}
+                >
+                  {getResultDetails(result)}
+                </pre>
+              ) : null}
             </div>
           </section>
         ) : null}
